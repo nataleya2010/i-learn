@@ -30,7 +30,12 @@ li{
     color:#044242;
 }
 
+a{
+    text-decoration: none;
+}
+
 li:hover{
     font-size: 4vh;
     color:#086b4a;
+    cursor: pointer;
 }
