@@ -231,6 +231,16 @@
 // }
 // console.log(result);
 
+// ! Вывести в консоль фигуру из звёздочек
+//      *
+//     ***
+//    *****
+//   *******
+//  *********
+// ***********
+
+
+//* мои старания
 // const lines = 5;
 // let result = '*';
 //     for(let i=0; i<=lines; i++){
@@ -242,29 +252,8 @@
 //   result= '*'+result+'*';
 // }
 
-//      *
-//     ***
-//    *****
-//   *******
-//  *********
-// ***********
 
-// const lines = 5;
-// let result = ' ';
-// for(let i=1; i<=lines; i++){
-//   for(let j =0; j<lines-i; j++){
-//     result=result+' ';
-//   }
-//   console.log(result+'*'+'\n');
-// }
-
-// let result='*';
-// for(let i=1;i<5;i++){
-//   result=result+'*';
-// }
-// console.log(result);
-
-
+//* правильное решение
 // const lines = 5;
 // let result = '';
 
@@ -286,15 +275,51 @@
 //  *********
 // ***********
 
-const lines = 5;
-let result = '';
-for(let i =0; i<=lines;i++){
-  for(let j = 0; j<lines-i; j++){
-    result +=' ';
-  }
-  for(let j =0; j < i*2+1; j++){
-    result +='*';
-  }
-  result +='\n';
-}
-console.log(result);
+
+//! Задачи на функции
+
+// function sayHello(str) {
+//   return `Привет, ${str}!`;
+// }
+// console.log(sayHello('Антон'));
+
+// function returnNeighboringNumbers(num) {
+//   let arr = [num-1, num, num+1];
+//   return arr;
+// }
+// console.log(returnNeighboringNumbers(5));
+
+//!  Создайте функцию, которая  принимает 2 числа. Первое число - это база, второе число - это сколько раз нужно повторить это число в прогрессии. Функция должна возвращать строку, где эти числа идут по порядку, разделенные тремя дефисами "---". После последнего числа их не должно быть. Если второй аргумент не является числом, равен или меньше нуля - то возвращать первый аргумент.
+
+//* Мои старания
+// function getMathResult(num, diff) {
+//   if(typeof diff !=="number" || diff<=0){
+//     return num;
+//   }else{
+//     let arr =[num];
+//     let resalt = num;
+//     for(let i = 1; i<diff; i++){
+//       arr[i] =arr[i-1]+num;
+//     }
+//     for(let i=1; i< arr.length;i++){
+//       resalt += "---"+ arr[i];
+//     }
+//     return resalt;
+//   }
+  
+// }
+// console.log(getMathResult(5, 3));
+
+//*А можно было проще:
+// function getMathResult(num, times) {
+//   if (typeof(times) !== 'number' || times <= 0) {
+//       return num;
+//   }
+//   let str = `${num}`;
+//   for (let i = 2; i <= times; i++) {
+//     str += `--- ${num * i}`;
+//     }
+//   return str;
+// }
+
+// console.log(getMathResult(5, 3));
