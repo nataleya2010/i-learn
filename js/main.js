@@ -289,7 +289,7 @@
 // }
 // console.log(returnNeighboringNumbers(5));
 
-//!  Создайте функцию, которая  принимает 2 числа. Первое число - это база, второе число - это сколько раз нужно повторить это число в прогрессии. Функция должна возвращать строку, где эти числа идут по порядку, разделенные тремя дефисами "---". После последнего числа их не должно быть. Если второй аргумент не является числом, равен или меньше нуля - то возвращать первый аргумент.
+// !  Создайте функцию, которая  принимает 2 числа. Первое число - это база, второе число - это сколько раз нужно повторить это число в прогрессии. Функция должна возвращать строку, где эти числа идут по порядку, разделенные тремя дефисами "---". После последнего числа их не должно быть. Если второй аргумент не число, равен или меньше нуля,возвращать первый аргумент.
 
 //* Мои старания
 // function getMathResult(num, diff) {
@@ -323,3 +323,90 @@
 // }
 
 // console.log(getMathResult(5, 3));
+
+//! функция принимает целое положительное число и возвращает объем и площадь полной поверхности куба с заданной гранью
+
+// function calculateVolumeAndArea(lengthLine) {
+//   if(lengthLine<0 || lengthLine%1 !==0){
+//     return "При вычислении произошла ошибка";
+//   }else{
+//     let volume = Math.pow(lengthLine, 3);
+//     let square = 6*Math.pow(lengthLine, 2);
+//   return `Объем куба: ${volume}, площадь всей поверхности: ${square}`;
+//   }
+// }
+// console.log(calculateVolumeAndArea(1.1));
+
+//!Напишите функцию, которая будет определять номер купе по переданному ей номеру места.
+
+// function getCoupeNumber(number) {
+//   if(number===0 || number>36){
+//     return "Таких мест в вагоне не существует";
+//   }else if(isNaN(number) ||number%1>0 || number<0){
+//     return "Ошибка. Проверьте правильность введенного номера места";
+//   }else if(number%4>0){
+//     while(number%4>0){
+//       number +=1;
+//     }
+//   }
+//   return number/4;
+// }
+// console.log(getCoupeNumber(5));
+
+//! Создайте функцию, которая принимает в себя целое число минут и возвращает время в нужном формате строки.
+
+// function getTimeFromMinutes(time) {
+  // if(typeof(time) !=='number' || time<0 || time%1>0 || time>600){
+  //   return "Ошибка, проверьте данные";
+  // }else {
+  //     let minute=time%60;
+  //     let hour = (time-minute)/60;
+  //     if(hour <1 || hour>=5){
+  //       return  `Это ${hour} часов и ${minute} минут`;
+  //     }else if(hour ==1){
+  //       return  `Это ${hour} час и ${minute} минут`;
+  //     }else if(hour>1 || hour<5){
+  //       return  `Это ${hour} часа и ${minute} минут`;
+  //     }
+      
+  // }
+
+// }
+
+// console.log(getTimeFromMinutes(0));
+
+//! Напишите функцию, которая принимает 4 числа и возвращает самое большее. Если один из аргументов не число или их меньше 4, возвращает 0
+
+// function findMaxNumber(a,b,c,d) {
+//     let arr = [a,b,c,d];
+//     if(arr.length<4){
+//         return 0;
+//     }else {
+//       let start = a;
+//       for(let i=0; i<arr.length; i++){
+//         if(typeof(arr[i]) !=='number'){
+//           return 0;
+//         } else {
+//           if(arr[i]>=start){
+//             start = arr[i];
+//           }
+//         }
+//       }
+//       return start;
+//     }
+// }
+
+// console.log(findMaxNumber(1,3,9));
+
+// * А можно решить с помощью Math.max 
+function findMaxNumber(a, b ,c, d) {
+  if (typeof(a) !== 'number' ||
+      typeof(b) !== 'number' ||
+      typeof(c) !== 'number' ||
+      typeof(d) !== 'number') {
+      return 0;
+  } else {
+      return Math.max(a, b ,c, d);
+  }
+}
+console.log(findMaxNumber(1,3,9,'3'));
