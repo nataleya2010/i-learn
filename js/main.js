@@ -399,14 +399,40 @@
 // console.log(findMaxNumber(1,3,9));
 
 // * А можно решить с помощью Math.max 
-function findMaxNumber(a, b ,c, d) {
-  if (typeof(a) !== 'number' ||
-      typeof(b) !== 'number' ||
-      typeof(c) !== 'number' ||
-      typeof(d) !== 'number') {
-      return 0;
-  } else {
-      return Math.max(a, b ,c, d);
-  }
+// function findMaxNumber(a, b ,c, d) {
+//   if (typeof(a) !== 'number' ||
+//       typeof(b) !== 'number' ||
+//       typeof(c) !== 'number' ||
+//       typeof(d) !== 'number') {
+//       return 0;
+//   } else {
+//       return Math.max(a, b ,c, d);
+//   }
+// }
+// console.log(findMaxNumber(1,3,9,'3'));
+
+// ! Создайте функцию, которая принимает целое положительное число а возвращает строку с числами Фибоначчи через пробел. Их количество должно быть равно переданному аргументу.
+
+function fib(num) {
+    if(typeof(num) !=='number' || num<0 || num%1>0){
+      return '*';
+    }else {
+      switch (num){
+        case 0:
+          return '0';
+        case 1:
+          return '0';
+        case 2:
+          return '0 1';
+      }
+
+      let arr = [0, 1];
+      let str = '0 1';
+      for(let i=02; i<num; i++){
+       arr[i] = arr[i-2]+arr[i-1];
+       str += ` ${arr[i-2]+arr[i-1]}`;
+      }
+      return str;
+    }
 }
-console.log(findMaxNumber(1,3,9,'3'));
+console.log(fib(10));
