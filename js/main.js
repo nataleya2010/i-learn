@@ -415,7 +415,7 @@
 
 function fib(num) {
     if(typeof(num) !=='number' || num<0 || num%1>0){
-      return '*';
+      return '';
     }else {
       switch (num){
         case 0:
